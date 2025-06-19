@@ -75,6 +75,16 @@ export class MusicSearchHandler {
       const spotifyTracks = await this.spotifyClient.searchTracks(enhancedQuery, limit);
       
       const tracks = spotifyTracks.map(track => this.spotifyClient.formatTrack(track));
+      
+      // デバッグ用ログ
+      console.log('検索結果数:', tracks.length);
+      if (tracks.length > 0) {
+        console.log('最初の楽曲:', {
+          name: tracks[0].name,
+          previewUrl: tracks[0].previewUrl,
+          hasPreview: !!tracks[0].previewUrl
+        });
+      }
 
       if (tracks.length === 0) {
         return {

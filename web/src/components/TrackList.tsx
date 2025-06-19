@@ -25,6 +25,8 @@ export default function TrackList({ tracks, onSelectTrack, selectedTrackId }: Tr
             selectedTrackId === track.id ? 'border-green-500 shadow-md' : ''
           }`}
           onClick={() => onSelectTrack(track)}
+          role="button"
+          tabIndex={0}
         >
           <div className="flex items-center space-x-4">
             {track.albumArt && (
