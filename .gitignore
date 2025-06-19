@@ -35,8 +35,9 @@ coverage/
 .eslintcache
 
 # IDE
-.vscode/
 .idea/
+*.swp
+*.swo
 
 # OS
 .DS_Store
